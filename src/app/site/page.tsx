@@ -1,4 +1,4 @@
-import { check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 import Link from "next/link";
