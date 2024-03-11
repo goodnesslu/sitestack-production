@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk  } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/providers/theme-provider";
+import ModalProvider from "@/providers/modal-provider";
+import { Toaster } from "@/components/ui/toaster";
 
-const inter = Space_Grotesk ({ subsets: ["latin"] });
+const inter = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sitestack - Your business in one place",
@@ -18,19 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ModalProvider>
+            {children} <Toaster />
+          </ModalProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
