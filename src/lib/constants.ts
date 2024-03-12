@@ -27,38 +27,42 @@ import Tune from "@/components/icons/tune";
 import Video from "@/components/icons/video_recorder";
 import Wallet from "@/components/icons/wallet";
 import Warning from "@/components/icons/warning";
-
 export const pricingCards = [
   {
-    title: "Foundations",
-    description: "You are just starting out & want to explore",
-    price: "$15",
-    duration: "month",
+    title: "Starter",
+    description:
+      "Get started with our free tier and build out your business with us.",
+    price: "Free",
+    duration: "",
     highlight: "Key features",
-    features: ["1 Website", "1 Team member", "Basic Support"],
+    features: ["3 Sub accounts", "2 Team members", "Unlimited pipelines"],
     priceId: "",
   },
   {
-    title: "Acceleration",
-    description: "You have a solid foundation and want to make it go faster!",
-    price: "$97",
+    title: "Growth",
+    description:
+      "Everything in Starter + Take your business to the next level.",
+    price: "$47",
     duration: "month",
     highlight: "Key features",
-    features: ["3 Websites", "3 Team Members", "24/7 Support team"],
-    priceId: "price_1OYxkqFj9oKEERu1KfJGWxgN",
+    features: ["Rebilling", "24/7 Support team"],
+    priceId: "price_1OtTgIP4YB2So2tihodQR1Jc",
   },
   {
-    title: "Domination",
-    description: "You want to build systems to scale predictably",
-    price: "$197",
+    title: "Scale",
+    description: "Everything in Growth + Perfect to elevate your business.",
+    price: "$97",
     duration: "month",
     highlight: "Everything in Starter, plus",
-    features: [
-      "Unlimited Websites",
-      "Unlimited Team members",
-      "Dedicated Growth Specialist",
-    ],
-    priceId: "price_1OYxkqFj9oKEERu1NbKUxXxN",
+    features: ["Unlimited Sub accounts", "Unlimited Team members"],
+    priceId: "price_1OtTgIP4YB2So2tiM7LpzrQB",
+  },
+];
+
+export const addOnProducts = [
+  {
+    title: "Priority Support",
+    id: "prod_PizIWx60Q2AEME",
   },
 ];
 
@@ -209,3 +213,25 @@ export const icons = [
     path: ClipboardIcon,
   },
 ];
+
+export type EditorBtns =
+  | "text"
+  | "container"
+  | "section"
+  | "contactForm"
+  | "paymentForm"
+  | "link"
+  | "2Col"
+  | "video"
+  | "__body"
+  | "image"
+  | null
+  | "3Col";
+
+export const defaultStyles: React.CSSProperties = {
+  backgroundPosition: "center",
+  objectFit: "cover",
+  backgroundRepeat: "no-repeat",
+  textAlign: "left",
+  opacity: "100%",
+};

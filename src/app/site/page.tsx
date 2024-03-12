@@ -52,13 +52,13 @@ export default async function Home() {
             <Card
               key={card.title}
               className={clsx("w-[300px] flex flex-col justify-between", {
-                "border-2 border-primary": card.title === "Acceleration",
+                "border-2 border-primary": card.title === "Growth",
               })}
             >
               <CardHeader>
                 <CardTitle
                   className={clsx("", {
-                    "text-muted-foreground": card.title !== "Acceleration",
+                    "text-muted-foreground": card.title !== "Growth",
                   })}
                 >
                   {card.title}
@@ -82,7 +82,7 @@ export default async function Home() {
                   href={`/agency?plan=${card.priceId}`}
                   className={clsx(
                     "w-full text-center bg-primary p-2 rounded-md",
-                    { "!bg-muted-foreground": card.title !== "Acceleration" }
+                    { "!bg-muted-foreground": card.title !== "Growth" }
                   )}
                 >
                   Get Started
