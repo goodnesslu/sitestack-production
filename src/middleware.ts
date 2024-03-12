@@ -1,8 +1,10 @@
 import { authMiddleware } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
+// This example protects all routes including api/trpc routes
+// Please edit this to allow other routes to be public as needed.
+// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your Middleware
 export default authMiddleware({
-  // Routes that can be accessed while signed out
   publicRoutes: ["/site", "/api/uploadthing"],
   async beforeAuth(auth, req) {},
   async afterAuth(auth, req) {
@@ -10,11 +12,12 @@ export default authMiddleware({
     const url = req.nextUrl;
     const searchParams = url.searchParams.toString();
     let hostname = req.headers;
+
     const pathWithSearchParams = `${url.pathname}${
       searchParams.length > 0 ? `?${searchParams}` : ""
     }`;
 
-    //if subdomain exits
+    //if subdomain exists
     const customSubDomain = hostname
       .get("host")
       ?.split(`${process.env.NEXT_PUBLIC_DOMAIN}`)
@@ -22,7 +25,7 @@ export default authMiddleware({
 
     if (customSubDomain) {
       return NextResponse.rewrite(
-        new URL(`/${customSubDomain}${pathWithSearchParams}`)
+        new URL(`/${customSubDomain}${pathWithSearchParams}`, req.url)
       );
     }
 
@@ -44,15 +47,8 @@ export default authMiddleware({
       return NextResponse.rewrite(new URL(`${pathWithSearchParams}`, req.url));
     }
   },
-
-  // Routes that can always be accessed, and have
-  // no authentication information
-  ignoredRoutes: ["/no-auth-in-this-route"],
 });
 
 export const config = {
-  // Protects all routes, including api/trpc.
-  // See https://clerk.com/docs/references/nextjs/auth-middleware
-  // for more information about configuring your Middleware
   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };
