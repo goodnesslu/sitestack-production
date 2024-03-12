@@ -1,6 +1,6 @@
 "use client";
 import {
-  AuthUserWithAgencySidebarOptionsSubAccounts,
+  AuthUserWithAgencySigebarOptionsSubAccounts,
   UserWithPermissionsAndSubAccounts,
 } from "@/lib/types";
 import { useModal } from "@/providers/modal-provider";
@@ -64,7 +64,7 @@ const UserDetails = ({ id, type, userData, subAccounts }: Props) => {
   const [roleState, setRoleState] = useState("");
   const [loadingPermissions, setLoadingPermissions] = useState(false);
   const [authUserData, setAuthUserData] =
-    useState<AuthUserWithAgencySidebarOptionsSubAccounts | null>(null);
+    useState<AuthUserWithAgencySigebarOptionsSubAccounts | null>(null);
   const { toast } = useToast();
   const router = useRouter();
 
