@@ -49,7 +49,7 @@ export default async function Home() {
         <h2 className="text-4xl text-center">Choose what fits you right</h2>
         <p className="text-muted-foreground text-center">
           Our straightfoward pricing plans are tailored to meet your needs. If{" "}
-          {"you're"} not <br /> ready to commit you can get started with a free
+          {"you are"} not <br /> ready to commit you can get started with a free
           account.
         </p>
         <div className="flex justify-center gap-4 flex-wrap mt-6">

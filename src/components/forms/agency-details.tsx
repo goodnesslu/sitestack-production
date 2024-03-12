@@ -199,7 +199,7 @@ const AgencyDetails = ({ data }: Props) => {
         <CardHeader>
           <CardTitle>Business Information</CardTitle>
           <CardDescription>
-            Let's create an account for your business. You can edit business
+            Let us create an account for your business. You can edit business
             settings later from the business settings tab.
           </CardDescription>
         </CardHeader>

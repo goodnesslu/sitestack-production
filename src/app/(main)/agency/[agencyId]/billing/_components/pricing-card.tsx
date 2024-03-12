@@ -1,7 +1,7 @@
-'use client'
-import SubscriptionFormWrapper from '@/components/forms/subscription-form/subscription-form-wrapper'
-import CustomModal from '@/components/global/custom-modal'
-import { Button } from '@/components/ui/button'
+"use client";
+import SubscriptionFormWrapper from "@/components/forms/subscription-form/subscription-form-wrapper";
+import CustomModal from "@/components/global/custom-modal";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,25 +9,25 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { PricesList } from '@/lib/types'
-import { useModal } from '@/providers/modal-provider'
-import { useSearchParams } from 'next/navigation'
-import React from 'react'
+} from "@/components/ui/card";
+import { PricesList } from "@/lib/types";
+import { useModal } from "@/providers/modal-provider";
+import { useSearchParams } from "next/navigation";
+import React from "react";
 
 type Props = {
-  features: string[]
-  buttonCta: string
-  title: string
-  description: string
-  amt: string
-  duration: string
-  highlightTitle: string
-  highlightDescription: string
-  customerId: string
-  prices: PricesList['data']
-  planExists: boolean
-}
+  features: string[];
+  buttonCta: string;
+  title: string;
+  description: string;
+  amt: string;
+  duration: string;
+  highlightTitle: string;
+  highlightDescription: string;
+  customerId: string;
+  prices: PricesList["data"];
+  planExists: boolean;
+};
 
 const PricingCard = ({
   amt,
@@ -42,14 +42,14 @@ const PricingCard = ({
   prices,
   title,
 }: Props) => {
-  const { setOpen } = useModal()
-  const searchParams = useSearchParams()
-  const plan = searchParams.get('plan')
+  const { setOpen } = useModal();
+  const searchParams = useSearchParams();
+  const plan = searchParams.get("plan");
 
   const handleManagePlan = async () => {
     setOpen(
       <CustomModal
-        title={'Manage Your Plan'}
+        title={"Manage Your Plan"}
         subheading="You can change your plan at any time from the billings settings"
       >
         <SubscriptionFormWrapper
@@ -59,12 +59,12 @@ const PricingCard = ({
       </CustomModal>,
       async () => ({
         plans: {
-          defaultPriceId: plan ? plan : '',
+          defaultPriceId: plan ? plan : "",
           plans: prices,
         },
       })
-    )
-  }
+    );
+  };
   return (
     <Card className="flex flex-col justify-between lg:w-1/2">
       <div>
@@ -103,17 +103,14 @@ const PricingCard = ({
               </p>
             </div>
 
-            <Button
-              className="md:w-fit w-full"
-              onClick={handleManagePlan}
-            >
+            <Button className="md:w-fit w-full" onClick={handleManagePlan}>
               {buttonCta}
             </Button>
           </div>
         </Card>
       </CardFooter>
     </Card>
-  )
-}
+  );
+};
 
-export default PricingCard
+export default PricingCard;
