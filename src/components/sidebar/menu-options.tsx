@@ -133,9 +133,10 @@ const MenuOptions = ({
                               >
                                 <div className="relative w-16">
                                   <Image
-                                    src={user?.Agency?.logo}
+                                    src={user?.Agency?.agencyLogo}
                                     alt="Agency Logo"
                                     className="rounded-md object-contain"
+                                    fill
                                   />
                                 </div>
                                 <div className="flex flex-col flex-1">
@@ -184,6 +185,7 @@ const MenuOptions = ({
                                       src={subaccount.subAccountLogo}
                                       alt="SubAccount Logo"
                                       className="rounded-md object-contain"
+                                      fill
                                     />
                                   </div>
                                   <div className="flex flex-col flex-1">
