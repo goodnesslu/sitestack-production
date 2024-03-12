@@ -35,3 +35,47 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment files
+.env*
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependency directories
+pnpm-debug.log
+pnpm-lock.yaml
+
+# User-specific files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+
+# OS-generated files
+ehthumbs.db
+Thumbs.db
