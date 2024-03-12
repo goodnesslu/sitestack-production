@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     "Grow your business with Sitestack. Manage your website, email, and social media in one place.",
 };
 
+// New comment
+
 export default function RootLayout({
   children,
 }: Readonly<{
